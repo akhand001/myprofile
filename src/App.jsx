@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Github, 
-  Download, 
-  ExternalLink, 
-  ChevronRight, 
-  Award, 
-  BookOpen, 
-  Briefcase, 
-  Layers, 
-  Cpu, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Github,
+  Download,
+  ExternalLink,
+  ChevronRight,
+  Award,
+  BookOpen,
+  Briefcase,
+  Layers,
+  Cpu,
   User,
   FileText,
   Printer,
@@ -190,18 +190,18 @@ const Portfolio = () => {
   const BlueprintGrid = () => (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden print:hidden">
       {/* Major Grid */}
-      <div className="absolute inset-0" style={{ 
-        backgroundImage: darkMode 
-          ? 'linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)' 
-          : 'linear-gradient(rgba(30, 58, 138, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 58, 138, 0.03) 1px, transparent 1px)', 
-        backgroundSize: '40px 40px' 
+      <div className="absolute inset-0" style={{
+        backgroundImage: darkMode
+          ? 'linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)'
+          : 'linear-gradient(rgba(30, 58, 138, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 58, 138, 0.03) 1px, transparent 1px)',
+        backgroundSize: '40px 40px'
       }}></div>
       {/* Minor Grid */}
-      <div className="absolute inset-0" style={{ 
+      <div className="absolute inset-0" style={{
         backgroundImage: darkMode
           ? 'linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)'
-          : 'linear-gradient(rgba(30, 58, 138, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 58, 138, 0.02) 1px, transparent 1px)', 
-        backgroundSize: '10px 10px' 
+          : 'linear-gradient(rgba(30, 58, 138, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 58, 138, 0.02) 1px, transparent 1px)',
+        backgroundSize: '10px 10px'
       }}></div>
     </div>
   );
@@ -227,14 +227,14 @@ const Portfolio = () => {
           <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
             <X size={24} />
           </button>
-          
+
           <div className="p-8">
             <div className="flex items-center gap-2 text-blue-400 font-mono text-xs mb-2">
               <Settings size={14} className="animate-spin-slow" />
               BLUEPRINT VIEW: {project.id}
             </div>
             <h2 className="text-2xl font-display font-bold text-white mb-4">{project.title}</h2>
-            
+
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div className="p-4 bg-slate-950/50 rounded border border-slate-800">
                 <h4 className="text-slate-400 text-xs uppercase tracking-wider mb-2">Technical Specs</h4>
@@ -253,7 +253,7 @@ const Portfolio = () => {
               </a>
             </div>
           </div>
-          
+
           {/* Blueprint Grid Overlay */}
           <div className="absolute inset-0 pointer-events-none opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500 to-transparent"></div>
         </div>
@@ -284,7 +284,7 @@ const Portfolio = () => {
 
       {/* --- FLOATING ELEMENTS --- */}
       {showTopBtn && (
-        <button 
+        <button
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-40 p-3 bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-all rounded-full print:hidden animate-bounce"
         >
@@ -306,30 +306,45 @@ const Portfolio = () => {
               <div className="text-[10px] font-mono text-blue-500 uppercase tracking-widest">Design Engineer</div>
             </div>
           </div>
-          
+
           <div className="flex gap-4 items-center">
-             <button onClick={toggleTheme} className={`p-2 rounded-full transition-colors ${darkMode ? 'text-yellow-400 hover:bg-slate-800' : 'text-slate-600 hover:bg-slate-100'}`}>
-               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-             </button>
-            <button onClick={handlePrint} className={`hidden md:flex items-center gap-2 px-4 py-2 border hover:text-blue-500 transition-colors text-sm font-medium chamfer-sm group ${darkMode ? 'border-slate-700 text-slate-300' : 'border-slate-300 text-slate-700'}`}>
-              <Printer size={16} /> <span className="group-hover:translate-x-0.5 transition-transform">Print</span>
+            <button onClick={toggleTheme} className={`p-2 rounded-full transition-colors ${darkMode ? 'text-yellow-400 hover:bg-slate-800' : 'text-slate-600 hover:bg-slate-100'}`}>
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <a href={`mailto:${profile.email}`} className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 shadow-lg shadow-blue-600/20 text-sm font-bold tracking-wide transition-all hover:-translate-y-0.5 chamfer-sm relative overflow-hidden">
-              <span className="absolute inset-0 bg-white/20 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-500"></span>
+            <button
+              onClick={handlePrint}
+              className={`hidden md:flex items-center gap-2 px-4 py-2 border hover:text-blue-500 transition-colors text-sm font-medium chamfer-sm group 
+  ${darkMode ? 'border-slate-700 text-slate-300' : 'border-slate-300 text-slate-700'}`}
+            >
+              <Printer size={16} />
+              <span className="group-hover:translate-x-0.5 transition-transform">
+                Print
+              </span>
+            </button>
+
+            <a
+              href={`mailto:${profile.email}`}
+              className="flex items-center gap-2 bg-blue-800 hover:bg-blue-300 text-white
+  px-9 py-2 shadow-lg shadow-blue-600/20 text-sm font-bold tracking-wide
+  transition-all hover:-translate-y-0.5 chamfer-sm relative overflow-hidden group"
+            >
+              <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
               <Download size={16} />
               <span>HIRE ME</span>
             </a>
+
+
           </div>
         </div>
       </nav>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 print:p-0">
         <BlueprintGrid />
-        
+
         {/* --- HERO SECTION --- */}
         <section className="relative mb-12 print:mb-6">
           <div className={`${darkMode ? 'bg-slate-900 border-slate-700 shadow-slate-900' : 'bg-white border-slate-100 shadow-slate-200/50'} border-2 shadow-xl p-8 md:p-12 relative overflow-hidden chamfer-lg print:border-none print:shadow-none print:p-0 transition-colors duration-500`}>
-            
+
             <div className={`absolute top-0 right-0 w-32 h-32 border-t-[20px] border-r-[20px] opacity-50 chamfer-lg print:hidden ${darkMode ? 'border-slate-800' : 'border-slate-50'}`}></div>
             <div className={`absolute bottom-6 right-12 text-[120px] font-display font-bold -z-10 select-none print:hidden ${darkMode ? 'text-slate-800' : 'text-slate-100'}`}>ENG</div>
 
@@ -342,24 +357,24 @@ const Portfolio = () => {
                   </span>
                   Open to Work
                 </div>
-                
+
                 <h1 className={`text-4xl md:text-6xl font-display font-bold mb-2 uppercase tracking-tight ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                  Akhand Pratap <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Chaurasiya</span>
+                  Akhand Pratap <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Chaurasiya</span>
                 </h1>
                 <p className={`text-xl font-medium mb-6 max-w-lg ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                   <span className={`${darkMode ? 'text-white' : 'text-slate-900'} font-semibold`}>Mechanical Design Engineer</span> specializing in IoT Integration, CAD Modeling & Product Development.
                 </p>
 
                 <div className="flex flex-wrap gap-4 text-sm font-medium">
-                   <a href={`mailto:${profile.email}`} className={`flex items-center gap-2 hover:text-blue-500 transition-colors px-3 py-2 rounded-sm border ${darkMode ? 'bg-slate-800 border-slate-700 text-slate-300' : 'bg-slate-50 border-slate-200 text-slate-600'} print:bg-transparent print:border-none print:p-0`}>
-                     <Mail size={16} className="text-blue-500" /> {profile.email}
-                   </a>
-                   <a href={`https://wa.me/919360991887`} target="_blank" rel="noreferrer" className={`flex items-center gap-2 hover:text-blue-500 transition-colors px-3 py-2 rounded-sm border ${darkMode ? 'bg-slate-800 border-slate-700 text-slate-300' : 'bg-slate-50 border-slate-200 text-slate-600'} print:bg-transparent print:border-none print:p-0`}>
-                     <Phone size={16} className="text-blue-500" /> {profile.phone}
-                   </a>
-                   <div className={`flex items-center gap-2 px-3 py-2 rounded-sm border ${darkMode ? 'bg-slate-800 border-slate-700 text-slate-300' : 'bg-slate-50 border-slate-200 text-slate-600'} print:bg-transparent print:border-none print:p-0`}>
-                     <MapPin size={16} className="text-blue-500" /> {profile.location}
-                   </div>
+                  <a href={`mailto:${profile.email}`} className={`flex items-center gap-2 hover:text-blue-500 transition-colors px-3 py-2 rounded-sm border ${darkMode ? 'bg-slate-800 border-slate-700 text-slate-300' : 'bg-slate-50 border-slate-200 text-slate-600'} print:bg-transparent print:border-none print:p-0`}>
+                    <Mail size={16} className="text-blue-500" /> {profile.email}
+                  </a>
+                  <a href={`https://wa.me/919360991887`} target="_blank" rel="noreferrer" className={`flex items-center gap-2 hover:text-blue-500 transition-colors px-3 py-2 rounded-sm border ${darkMode ? 'bg-slate-800 border-slate-700 text-slate-300' : 'bg-slate-50 border-slate-200 text-slate-600'} print:bg-transparent print:border-none print:p-0`}>
+                    <Phone size={16} className="text-blue-500" /> {profile.phone}
+                  </a>
+                  <div className={`flex items-center gap-2 px-3 py-2 rounded-sm border ${darkMode ? 'bg-slate-800 border-slate-700 text-slate-300' : 'bg-slate-50 border-slate-200 text-slate-600'} print:bg-transparent print:border-none print:p-0`}>
+                    <MapPin size={16} className="text-blue-500" /> {profile.location}
+                  </div>
                 </div>
               </div>
 
@@ -391,16 +406,16 @@ const Portfolio = () => {
         </section>
 
         <div className="grid md:grid-cols-12 gap-8 print:block">
-          
+
           {/* --- LEFT COLUMN --- */}
           <div className="md:col-span-4 space-y-8 print:w-full print:mb-8">
-            
+
             <section className={`${darkMode ? 'bg-slate-900 border-slate-700' : 'bg-white border-slate-200'} p-6 border shadow-sm chamfer-sm print:border-none print:shadow-none print:p-0 transition-colors`}>
               <div className="flex items-center gap-3 mb-6">
                 <Cpu size={20} className="text-blue-600" />
                 <h3 className={`font-display font-bold text-lg ${darkMode ? 'text-white' : 'text-slate-800'} uppercase`}>Technical Arsenal</h3>
               </div>
-              
+
               <div className="space-y-6">
                 {[
                   { cat: "Design & CAD", items: profile.skills.technical, color: "bg-blue-500" },
@@ -441,38 +456,38 @@ const Portfolio = () => {
               ))}
             </section>
 
-             <section className={`${darkMode ? 'bg-slate-800' : 'bg-slate-900'} p-6 text-white chamfer-sm print:hidden shadow-md`}>
-               <div className="flex items-center gap-3 mb-4">
-                 <Award size={20} className="text-orange-400" />
-                 <h3 className="font-display font-bold text-lg uppercase">Publications</h3>
-               </div>
-               {profile.publications.map((pub, idx) => (
-                 <div key={idx} className="text-sm">
-                   <p className="font-medium leading-relaxed mb-2">"{pub.title}"</p>
-                   <div className="flex items-center gap-2 text-xs text-slate-400 font-mono">
-                      <span>IC4M 2025</span>
-                      <span>•</span>
-                      <span className="text-green-400">{pub.status}</span>
-                   </div>
-                 </div>
-               ))}
+            <section className={`${darkMode ? 'bg-slate-800' : 'bg-slate-900'} p-6 text-white chamfer-sm print:hidden shadow-md`}>
+              <div className="flex items-center gap-3 mb-4">
+                <Award size={20} className="text-orange-400" />
+                <h3 className="font-display font-bold text-lg uppercase">Publications</h3>
+              </div>
+              {profile.publications.map((pub, idx) => (
+                <div key={idx} className="text-sm">
+                  <p className="font-medium leading-relaxed mb-2">"{pub.title}"</p>
+                  <div className="flex items-center gap-2 text-xs text-slate-400 font-mono">
+                    <span>IC4M 2025</span>
+                    <span>•</span>
+                    <span className="text-green-400">{pub.status}</span>
+                  </div>
+                </div>
+              ))}
             </section>
           </div>
 
           {/* --- RIGHT COLUMN --- */}
           <div className="md:col-span-8 space-y-10 print:w-full">
-            
+
             <section id="experience">
               <SectionTitle title="Professional Trajectory" icon={Briefcase} />
-              
+
               <div className="space-y-8">
                 {profile.experience.map((exp, index) => (
                   <div key={index} className="relative group">
                     <div className={`absolute left-0 top-0 bottom-0 w-px ${darkMode ? 'bg-slate-800 group-hover:bg-blue-800' : 'bg-slate-200 group-hover:bg-blue-200'} transition-colors print:hidden`}></div>
-                    
+
                     <div className="pl-6 md:pl-8">
                       <div className="absolute left-[-6px] top-0 w-3 h-3 bg-blue-600 border-2 border-white rounded-full group-hover:scale-125 transition-transform print:hidden shadow-sm"></div>
-                      
+
                       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                         <div>
                           <h3 className={`text-xl font-bold ${darkMode ? 'text-white group-hover:text-blue-400' : 'text-slate-900 group-hover:text-blue-700'} transition-colors`}>{exp.role}</h3>
@@ -499,26 +514,26 @@ const Portfolio = () => {
               </div>
             </section>
 
-             <section id="trainings" className="print:break-inside-avoid">
+            <section id="trainings" className="print:break-inside-avoid">
               <SectionTitle title="Certifications & Technical Training" icon={Scroll} />
-              
+
               <div className="grid md:grid-cols-2 gap-4">
                 {profile.trainings.map((train, index) => (
                   <div key={index} className={`${darkMode ? 'bg-slate-900 border-slate-700 hover:bg-slate-800' : 'bg-slate-50 border-slate-200 hover:bg-white'} border p-5 rounded hover:border-blue-400 hover:shadow-md transition-all group chamfer-sm`}>
-                     <div className="flex justify-between items-start mb-2">
-                       <span className="text-[10px] font-mono text-blue-600 bg-blue-500/10 px-2 py-0.5 rounded uppercase tracking-wide">
-                         {train.date}
-                       </span>
-                     </div>
-                     <h3 className={`font-bold leading-snug ${darkMode ? 'text-slate-200 group-hover:text-blue-400' : 'text-slate-800 group-hover:text-blue-700'} transition-colors mb-1`}>
-                       {train.title}
-                     </h3>
-                     <p className="text-xs font-semibold text-slate-500 mb-2 uppercase tracking-wide">
-                       {train.issuer}
-                     </p>
-                     <p className={`text-xs leading-relaxed border-t pt-2 ${darkMode ? 'text-slate-400 border-slate-800' : 'text-slate-600 border-slate-200'}`}>
-                       {train.desc}
-                     </p>
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-[10px] font-mono text-blue-600 bg-blue-500/10 px-2 py-0.5 rounded uppercase tracking-wide">
+                        {train.date}
+                      </span>
+                    </div>
+                    <h3 className={`font-bold leading-snug ${darkMode ? 'text-slate-200 group-hover:text-blue-400' : 'text-slate-800 group-hover:text-blue-700'} transition-colors mb-1`}>
+                      {train.title}
+                    </h3>
+                    <p className="text-xs font-semibold text-slate-500 mb-2 uppercase tracking-wide">
+                      {train.issuer}
+                    </p>
+                    <p className={`text-xs leading-relaxed border-t pt-2 ${darkMode ? 'text-slate-400 border-slate-800' : 'text-slate-600 border-slate-200'}`}>
+                      {train.desc}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -526,7 +541,7 @@ const Portfolio = () => {
 
             <section id="projects" className="print:break-inside-avoid">
               <SectionTitle title="Engineering Projects" icon={Layers} />
-              
+
               <div className="grid gap-6">
                 {profile.projects.map((project, index) => (
                   <div key={index} className={`${darkMode ? 'bg-slate-900 border-slate-700 hover:border-blue-500' : 'bg-white border-slate-200 hover:border-blue-400'} border p-6 hover:shadow-lg transition-all duration-300 group chamfer-sm print:border-slate-300 print:shadow-none print:break-inside-avoid`}>
@@ -544,11 +559,11 @@ const Portfolio = () => {
                           {project.title}
                         </h3>
                       </div>
-                      <button 
+                      <button
                         onClick={() => setSelectedProject(project)}
                         className={`text-xs font-bold flex items-center gap-1 ${darkMode ? 'text-slate-400 hover:text-white' : 'text-slate-400 hover:text-blue-600'} transition-colors print:hidden`}
                       >
-                         <Settings size={14} /> SPECS
+                        <Settings size={14} /> SPECS
                       </button>
                     </div>
 
@@ -576,7 +591,7 @@ const Portfolio = () => {
                           </span>
                         ))}
                       </div>
-                      <button 
+                      <button
                         onClick={() => setSelectedProject(project)}
                         className="text-blue-600 text-xs font-bold flex items-center gap-1 hover:underline print:hidden"
                       >
@@ -594,11 +609,11 @@ const Portfolio = () => {
       {/* --- REDESIGNED FOOTER --- */}
       <footer className={`${darkMode ? 'bg-slate-950 border-slate-800' : 'bg-slate-900 border-slate-800'} text-slate-300 py-12 mt-12 print:hidden border-t`}>
         <div className="max-w-4xl mx-auto px-6 text-center">
-          
+
           <div className="inline-block p-1.5 mb-6 chamfer-sm font-display font-bold text-xl tracking-widest border-2 bg-white text-slate-950 border-white">
-             APC
+            APC
           </div>
-          
+
           <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 uppercase tracking-wide">
             Ready to Engineer the Future?
           </h2>
@@ -607,7 +622,7 @@ const Portfolio = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
-            <a href={`mailto:${profile.email}`} className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-sm font-bold transition-all hover:-translate-y-1 w-full sm:w-auto justify-center">
+            <a href={`mailto:${profile.email}`} className="flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-sm font-bold transition-all hover:-translate-y-1 w-full sm:w-auto justify-center">
               <Mail size={18} /> Send Email
             </a>
             <a href={`https://wa.me/919360991887`} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-slate-800 hover:bg-green-600 text-white px-6 py-3 rounded-sm font-bold transition-all hover:-translate-y-1 w-full sm:w-auto justify-center border border-slate-700">
